@@ -5,6 +5,9 @@
 ./terragrunt-dependency-resolver.sh main
 ```
 
+![image](https://github.com/kritish-dhaubanjar/terragrunt-dependency-resolver/assets/25634165/98e30532-c292-4a5a-a78e-5e6ff2c62204)
+
+
 ## Directory Structure Example
 ```shell
 ├── dev
