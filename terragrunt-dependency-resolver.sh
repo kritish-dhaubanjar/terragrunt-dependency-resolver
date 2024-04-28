@@ -25,7 +25,7 @@ while true; do
 
   GIT_FILE=$(sed -E 's#modules/##' <<< $GIT_FILE)
 
-  DEPENDENCIES=($(grep --exclude-dir={.cache,.git,.github} -rl $GIT_FILE))
+  DEPENDENCIES=($(grep --exclude-dir={.cache,.git,.github,.terragrunt-cache} -rl $GIT_FILE))
 
   for DEPENDENCY in "${DEPENDENCIES[@]}"; do
     GIT_FILES+=("$DEPENDENCY")
