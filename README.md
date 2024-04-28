@@ -1,8 +1,23 @@
 # terragrunt-dependency-resolver
 
 ## Usage
-```shell
+```bash
 ./terragrunt-dependency-resolver.sh main
+```
+
+## Example
+```
+$ ./terragrunt-dependency-resolver.sh main
+dev/iam/terraform
+dev/database/aurora_postgres
+qa/iam/terraform
+
+$ ./terragrunt-dependency-resolver.sh main | grep dev | cut -d / -f 2-
+iam/terraform
+database/aurora_postgres
+
+$ ./terragrunt-dependency-resolver.sh main | grep qa | cut -d / -f 2-
+iam/terraform
 ```
 
 ![image](https://github.com/kritish-dhaubanjar/terragrunt-dependency-resolver/assets/25634165/98e30532-c292-4a5a-a78e-5e6ff2c62204)
@@ -40,32 +55,6 @@
 │           ├── main.tf
 │           └── variables.tf
 └── terragrunt-dependency-resolver.sh
-```
-
-```yaml
-- name: Find changes
-    id: changes
-    shell: bash
-    run: |
-        git fetch origin ${{ github.base_ref }}
-        ./terragrunt-dependency-resolver.sh ${{ github.base_ref }} > changes.list
-
-        touch ${{ matrix.environment }}.terragrunt.list
-        cat changes.list | grep ^${{ matrix.environment }} | cut -d / -f 2- > ${{ matrix.environment }}.terragrunt.list || true
-
-        if ! [[ -s ${{ matrix.environment }}.terragrunt.list ]]; then
-            echo "No changes to plan/apply"
-            echo "TERRAGRUNT_INCLUDE_PATHS=--terragrunt-include-dir=" >> $GITHUB_ENV
-            exit 0
-        fi
-
-        include_paths=""
-
-        for change in $(cat ${{ matrix.environment }}.terragrunt.list); do
-            include_paths="${include_paths} --terragrunt-include-dir=$change"
-        done
-
-        echo "TERRAGRUNT_INCLUDE_PATHS=${include_paths}" >> $GITHUB_ENV
 ```
 
 | Before | After |
