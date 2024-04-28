@@ -13,11 +13,11 @@ dev/database/aurora_postgres
 qa/iam/terraform
 
 $ ./terragrunt_changes.sh | grep dev | sed 's/^dev\/\?/.\//'| grep -v '^$'
-iam/terraform
-database/aurora_postgres
+./iam/terraform
+./database/aurora_postgres
 
 $ ./terragrunt_changes.sh | grep qa | sed 's/^qa\/\?/.\//'| grep -v '^$'
-iam/terraform
+./iam/terraform
 ```
 
 ![image](https://github.com/kritish-dhaubanjar/terragrunt-dependency-resolver/assets/25634165/98e30532-c292-4a5a-a78e-5e6ff2c62204)
