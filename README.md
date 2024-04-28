@@ -12,11 +12,11 @@ dev/iam/terraform
 dev/database/aurora_postgres
 qa/iam/terraform
 
-$ ./terragrunt-dependency-resolver.sh main | grep dev | cut -d / -f 2-
+$ ./terragrunt_changes.sh | grep dev | sed 's/^qa\/\?//'| grep -v '^$'
 iam/terraform
 database/aurora_postgres
 
-$ ./terragrunt-dependency-resolver.sh main | grep qa | cut -d / -f 2-
+$ ./terragrunt_changes.sh | grep qa | sed 's/^qa\/\?//'| grep -v '^$'
 iam/terraform
 ```
 
