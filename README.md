@@ -12,11 +12,11 @@ dev/iam/terraform
 dev/database/aurora_postgres
 qa/iam/terraform
 
-$ ./terragrunt_changes.sh | grep dev | sed 's/^dev\/\?/.\//'| grep -v '^$'
+$ ./terragrunt_changes.sh | grep ^dev | sed 's/^dev\/\?/.\//'| grep -v '^$'
 ./iam/terraform
 ./database/aurora_postgres
 
-$ ./terragrunt_changes.sh | grep qa | sed 's/^qa\/\?/.\//'| grep -v '^$'
+$ ./terragrunt_changes.sh | grep ^qa | sed 's/^qa\/\?/.\//'| grep -v '^$'
 ./iam/terraform
 ./
 ```
