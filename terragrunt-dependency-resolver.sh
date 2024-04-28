@@ -5,7 +5,7 @@ BRANCH=${BRANCH:-"main"}
 
 GIT_FILES=($(git diff origin/$BRANCH --name-only))
 
-ENVIRONMENTS=('demo/' 'dev/' 'preprod/' 'preprod_drp/' 'prod/' 'qa/' 'staging/')
+ENVIRONMENTS=('dev/' 'qa/' 'stag/', 'prod')
 
 TARGETS=()
 TARGET_DIRS=()
