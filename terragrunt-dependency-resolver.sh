@@ -1,6 +1,9 @@
 #!/bin/bash
 
-GIT_FILES=($(git diff origin/$1 --name-only))
+BRANCH=$1
+BRANCH=${BRANCH:-"main"}
+
+GIT_FILES=($(git diff origin/$BRANCH --name-only))
 
 ENVIRONMENTS=('demo/' 'dev/' 'preprod/' 'preprod_drp/' 'prod/' 'qa/' 'staging/')
 

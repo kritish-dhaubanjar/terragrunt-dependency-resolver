@@ -1,5 +1,10 @@
 # terragrunt-dependency-resolver
 
+## Usage
+```shell
+./terragrunt-dependency-resolver.sh main
+```
+
 ## Directory Structure Example
 ```shell
 ├── dev
