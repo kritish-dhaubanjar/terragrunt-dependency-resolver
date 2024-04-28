@@ -30,25 +30,15 @@
 ├── modules
 │   ├── service
 │   │   ├── dynamodb
-│   │   │   ├── autoscaling.tf
 │   │   │   ├── main.tf
-│   │   │   ├── output.tf
-│   │   │   └── variables.tf
 │   │   ├── ec2
 │   │   │   ├── main.tf
-│   │   │   ├── outputs.tf
-│   │   │   └── variables.tf
 │   └── workflow
 │       ├── api_ecs
 │       │   ├── main.tf
-│       │   ├── outputs.tf
-│       │   └── variable.tf
 │       └── dynamodb_tables
 │           ├── main.tf
-│           ├── outputs.tf
 │           └── variables.tf
-├── plan.html
-├── Readme.md
 └── terragrunt-dependency-resolver.sh
 ```
 
