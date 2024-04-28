@@ -3,7 +3,7 @@
 BRANCH=$1
 BRANCH=${BRANCH:-"main"}
 
-GIT_FILES=($(git diff origin/$BRANCH --name-only))
+GIT_FILES=($(git diff $BRANCH --name-only))
 
 ENVIRONMENTS=('dev/' 'qa/' 'stag/', 'prod')
 
