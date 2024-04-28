@@ -20,7 +20,7 @@ $ ./terragrunt_changes.sh | grep qa | sed 's/^qa\/\?/.\//'| grep -v '^$'
 ./iam/terraform
 ```
 
-![image](https://github.com/kritish-dhaubanjar/terragrunt-dependency-resolver/assets/25634165/98e30532-c292-4a5a-a78e-5e6ff2c62204)
+![image](https://github.com/kritish-dhaubanjar/terragrunt-dependency-resolver/assets/25634165/dfb21da6-efd6-4f18-9114-d1d5ed17bcf1)
 
 
 ## Directory Structure Example
