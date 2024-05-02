@@ -11,6 +11,7 @@ $ ./terragrunt-dependency-resolver.sh main
 dev/iam/terraform
 dev/database/aurora_postgres
 qa/iam/terraform
+qa
 
 $ ./terragrunt_changes.sh | grep ^dev | sed 's/^dev\/\?/.\//'| grep -v '^$'
 ./iam/terraform
