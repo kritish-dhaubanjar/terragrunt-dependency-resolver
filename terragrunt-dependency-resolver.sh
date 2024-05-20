@@ -19,6 +19,13 @@ while true; do
     break
   fi
 
+  IFS="/" read -r -a TOKENS <<< "$GIT_FILE"
+
+  # modules/workflow/IAM/X/Y/Z.json -> modules/workflow/IAM/X/
+  if [[ ! -z ${TOKENS[5]} ]]; then
+    GIT_FILES+=($(dirname $(dirname $GIT_FILE)))
+  fi
+
   if [[ $(basename $GIT_FILE) == *.tf ]]; then
     GIT_FILE=$(dirname $GIT_FILE)
   fi
